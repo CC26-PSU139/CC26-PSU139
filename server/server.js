@@ -1,10 +1,9 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
-
 import cvRoutes from "./src/routes/cv.routes.js";
-
-dotenv.config();
 
 const app = express();
 
