@@ -1,4 +1,6 @@
-import { PDFParse } from 'pdf-parse';
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const pdfParse = require('pdf-parse');
 import { analyzeCVService } from "../services/aiService.js";
 import { supabase } from "../config/supabase.js";
 
@@ -8,12 +10,8 @@ export const analyzeCV = async (req, res) => {
 
     // Jika ada file PDF yang diupload
     if (req.file) {
-      // Menggunakan cara resmi pdf-parse versi 2.4.5
-      const parser = new PDFParse({ data: req.file.buffer });
-      const textResult = await parser.getText();
-      // Ambil properti text dari hasil method tersebut
-      cvText = textResult?.text || "";
-      await parser.destroy();
+      const pdfData = await pdfParse(req.file.buffer);
+      cvText = pdfData.text;
     }
     // Jika teks CV dikirim langsung (untuk testing)
     else if (req.body.cv_text) {
