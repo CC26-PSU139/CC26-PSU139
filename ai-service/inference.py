@@ -210,7 +210,7 @@ def load_assets():
         embed_dim              = 128,
         num_heads              = 4,
         ff_dim                 = 256,
-        num_transformer_blocks = 2,
+        num_transformer_blocks = 3,
         proj_dim               = 64,
         dropout                = 0.1,
     )
