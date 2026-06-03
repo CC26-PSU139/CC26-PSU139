@@ -219,7 +219,8 @@ def load_assets():
     dummy_job = tf.zeros((1, 512), dtype=tf.int64)
     _         = model([dummy_cv, dummy_job], training=False)
 
-    model.load_weights('models/career_weights_v3.weights.h5')
+    checkpoint = tf.train.Checkpoint(model=model)
+    checkpoint.restore('models/career_ckpt').expect_partial()
 
     with open('models/vectorizer_config.pkl', 'rb') as f:
         vocab_config = pickle.load(f)
