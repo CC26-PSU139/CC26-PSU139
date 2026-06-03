@@ -19,7 +19,7 @@ export const analyzeCV = async (
     formData.append('cv_file', file);
 
     const response = await apiClient.post(
-      '/analyze',
+      '/api/analyze',
       formData,
       {
         headers: {
