@@ -119,6 +119,7 @@ Total: **4.014 lowongan** setelah proses cleaning.
 
 Analisis dan visualisasi tren pasar kerja tersedia di Streamlit Cloud — menampilkan statistik skill yang paling dibutuhkan, distribusi level pengalaman, dan tren kategori pekerjaan.
 Link Dashboard : https://careerpathai-capstone.streamlit.app/
+
 ---
 
 ## ⚠️ Catatan
